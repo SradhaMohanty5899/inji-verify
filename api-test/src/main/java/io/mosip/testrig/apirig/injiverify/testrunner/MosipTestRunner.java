@@ -107,9 +107,9 @@ public class MosipTestRunner {
 		if (!runType.equalsIgnoreCase("JAR")) {
 			AuthTestsUtil.removeOldMosipTempTestResource();
 		}
-		BaseTestCase.currentModule = GlobalConstants.INJIVERIFY;
-		BaseTestCase.certsForModule = GlobalConstants.INJIVERIFY;
 		AdminTestUtil.copymoduleSpecificAndConfigFile(GlobalConstants.INJIVERIFY);
+		BaseTestCase.currentModule = BaseTestCase.runContext + GlobalConstants.INJIVERIFY;
+		BaseTestCase.certsForModule = BaseTestCase.currentModule;
 	}
 
 	private static void setLogLevels() {
